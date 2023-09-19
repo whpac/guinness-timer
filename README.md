@@ -10,6 +10,8 @@ Bez podawania hasła program można zamknąć wyłącznie z użyciem Menedżera 
 
 Okienko stopera jest pokazywane ponad wszystkimi innymi, bez możliwości minimalizacji.
 
+Hasło do zatrzymania stopera to `guinness` (wielkość liter nie ma znaczenia).
+
 ## Cel odliczania
 Przed uruchomieniem odliczania można określić cel do osiągnięcia. Po przekroczeniu tego progu
 odliczanie trwa dalej, ale możliwe jest wstrzymanie stopera bez podawania hasła.
