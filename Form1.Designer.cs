@@ -52,6 +52,7 @@
             // 
             // valueLabel
             // 
+            valueLabel.ForeColor = Color.White;
             valueLabel.Location = new Point(3, 0);
             valueLabel.Name = "valueLabel";
             valueLabel.Size = new Size(731, 20);
@@ -77,26 +78,32 @@
             // 
             // cancelPasswordButton
             // 
+            cancelPasswordButton.BackColor = Color.Black;
+            cancelPasswordButton.ForeColor = Color.White;
             cancelPasswordButton.Location = new Point(273, 2);
             cancelPasswordButton.Name = "cancelPasswordButton";
             cancelPasswordButton.Size = new Size(84, 29);
             cancelPasswordButton.TabIndex = 8;
             cancelPasswordButton.Text = "Anuluj";
-            cancelPasswordButton.UseVisualStyleBackColor = true;
+            cancelPasswordButton.UseVisualStyleBackColor = false;
             cancelPasswordButton.Click += cancelPasswordButton_Click;
             // 
             // acceptPasswordButton
             // 
+            acceptPasswordButton.BackColor = Color.Black;
+            acceptPasswordButton.ForeColor = Color.White;
             acceptPasswordButton.Location = new Point(213, 2);
             acceptPasswordButton.Name = "acceptPasswordButton";
             acceptPasswordButton.Size = new Size(54, 29);
             acceptPasswordButton.TabIndex = 7;
             acceptPasswordButton.Text = "OK";
-            acceptPasswordButton.UseVisualStyleBackColor = true;
+            acceptPasswordButton.UseVisualStyleBackColor = false;
             acceptPasswordButton.Click += acceptPasswordButton_Click;
             // 
             // passwordTextBox
             // 
+            passwordTextBox.BackColor = Color.Black;
+            passwordTextBox.ForeColor = Color.White;
             passwordTextBox.Location = new Point(59, 4);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(148, 27);
@@ -105,6 +112,7 @@
             // passwordPromptLabel
             // 
             passwordPromptLabel.AutoSize = true;
+            passwordPromptLabel.ForeColor = Color.White;
             passwordPromptLabel.Location = new Point(3, 7);
             passwordPromptLabel.Name = "passwordPromptLabel";
             passwordPromptLabel.Size = new Size(50, 20);
@@ -113,6 +121,8 @@
             // 
             // targetTextBox
             // 
+            targetTextBox.BackColor = Color.Black;
+            targetTextBox.ForeColor = Color.White;
             targetTextBox.Location = new Point(142, 34);
             targetTextBox.Mask = "##9\\:90\\:00";
             targetTextBox.Name = "targetTextBox";
@@ -123,6 +133,7 @@
             // targetLabel
             // 
             targetLabel.AutoSize = true;
+            targetLabel.ForeColor = Color.White;
             targetLabel.Location = new Point(103, 37);
             targetLabel.Name = "targetLabel";
             targetLabel.Size = new Size(33, 20);
@@ -142,17 +153,20 @@
             // 
             // resetButton
             // 
+            resetButton.BackColor = Color.Black;
+            resetButton.ForeColor = Color.White;
             resetButton.Location = new Point(155, 32);
             resetButton.Name = "resetButton";
             resetButton.Size = new Size(94, 29);
             resetButton.TabIndex = 2;
             resetButton.Text = "Reset";
-            resetButton.UseVisualStyleBackColor = true;
+            resetButton.UseVisualStyleBackColor = false;
             resetButton.Click += resetButton_Click;
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
+            passwordLabel.ForeColor = Color.White;
             passwordLabel.Location = new Point(3, 11);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(246, 20);
@@ -161,22 +175,26 @@
             // 
             // stopButton
             // 
+            stopButton.BackColor = Color.Black;
+            stopButton.ForeColor = Color.White;
             stopButton.Location = new Point(55, 32);
             stopButton.Name = "stopButton";
             stopButton.Size = new Size(94, 29);
             stopButton.TabIndex = 1;
             stopButton.Text = "Pauza";
-            stopButton.UseVisualStyleBackColor = true;
+            stopButton.UseVisualStyleBackColor = false;
             stopButton.Click += stopButton_Click;
             // 
             // startButton
             // 
+            startButton.BackColor = Color.Black;
+            startButton.ForeColor = Color.White;
             startButton.Location = new Point(3, 33);
             startButton.Name = "startButton";
             startButton.Size = new Size(94, 29);
             startButton.TabIndex = 0;
             startButton.Text = "Start";
-            startButton.UseVisualStyleBackColor = true;
+            startButton.UseVisualStyleBackColor = false;
             startButton.Click += startButton_Click;
             // 
             // timer
@@ -199,6 +217,7 @@
             // 
             // timeLabel
             // 
+            timeLabel.ForeColor = Color.White;
             timeLabel.Location = new Point(3, 20);
             timeLabel.Name = "timeLabel";
             timeLabel.Size = new Size(731, 20);
@@ -210,6 +229,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
             ClientSize = new Size(731, 307);
             Controls.Add(clocksPanel);
             Controls.Add(panel1);
