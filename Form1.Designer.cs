@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            timeLabel = new Label();
+            valueLabel = new Label();
             panel1 = new Panel();
             cancelPasswordButton = new Button();
             acceptPasswordButton = new Button();
@@ -43,20 +43,21 @@
             stopButton = new Button();
             startButton = new Button();
             timer = new System.Windows.Forms.Timer(components);
+            clocksPanel = new FlowLayoutPanel();
+            timeLabel = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            clocksPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // timeLabel
+            // valueLabel
             // 
-            timeLabel.Dock = DockStyle.Fill;
-            timeLabel.Location = new Point(0, 0);
-            timeLabel.Name = "timeLabel";
-            timeLabel.Padding = new Padding(0, 0, 0, 67);
-            timeLabel.Size = new Size(731, 307);
-            timeLabel.TabIndex = 0;
-            timeLabel.Text = "00:00:00";
-            timeLabel.TextAlign = ContentAlignment.MiddleCenter;
+            valueLabel.Location = new Point(3, 0);
+            valueLabel.Name = "valueLabel";
+            valueLabel.Size = new Size(731, 20);
+            valueLabel.TabIndex = 0;
+            valueLabel.Text = "00:00:00";
+            valueLabel.TextAlign = ContentAlignment.BottomCenter;
             // 
             // panel1
             // 
@@ -183,13 +184,35 @@
             timer.Interval = 200;
             timer.Tick += timer_Tick;
             // 
+            // clocksPanel
+            // 
+            clocksPanel.Controls.Add(valueLabel);
+            clocksPanel.Controls.Add(timeLabel);
+            clocksPanel.Dock = DockStyle.Fill;
+            clocksPanel.FlowDirection = FlowDirection.TopDown;
+            clocksPanel.Location = new Point(0, 0);
+            clocksPanel.Name = "clocksPanel";
+            clocksPanel.Size = new Size(731, 240);
+            clocksPanel.TabIndex = 2;
+            clocksPanel.WrapContents = false;
+            clocksPanel.Layout += clocksPanel_Layout;
+            // 
+            // timeLabel
+            // 
+            timeLabel.Location = new Point(3, 20);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(731, 20);
+            timeLabel.TabIndex = 1;
+            timeLabel.Text = "00:00:00";
+            timeLabel.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(731, 307);
+            Controls.Add(clocksPanel);
             Controls.Add(panel1);
-            Controls.Add(timeLabel);
             DoubleBuffered = true;
             MinimizeBox = false;
             MinimumSize = new Size(570, 150);
@@ -203,12 +226,13 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            clocksPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label timeLabel;
+        private Label valueLabel;
         private Panel panel1;
         private Button resetButton;
         private Button stopButton;
@@ -222,5 +246,7 @@
         private Label passwordPromptLabel;
         private Button acceptPasswordButton;
         private Button cancelPasswordButton;
+        private FlowLayoutPanel clocksPanel;
+        private Label timeLabel;
     }
 }

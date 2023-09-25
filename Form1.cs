@@ -7,7 +7,7 @@ namespace GuinnessTimer
             InitializeComponent();
             timer.Start();
             UpdateInterface();
-            UpdateTimerFontSize();
+            UpdateTimerLabelSize();
         }
 
         private void UpdateInterface()
@@ -48,11 +48,29 @@ namespace GuinnessTimer
             }
         }
 
-        private void UpdateTimerFontSize()
+        private void UpdateTimerLabelSize()
         {
-            var fontFamily = timeLabel.Font.FontFamily;
-            var fontSize = Height / 6f;
-            timeLabel.Font = new Font(fontFamily, fontSize, FontStyle.Regular);
+            try
+            {
+                clocksPanel.SuspendLayout();
+
+                var fontFamily = valueLabel.Font.FontFamily;
+                var fontSizeValue = Height / 6f;
+                var fontSizeTime = Height / 10f;
+
+                valueLabel.Height = (int)(clocksPanel.Height * (10 / 16f));
+                timeLabel.Height = (int)(clocksPanel.Height * (6 / 16f));
+                valueLabel.Width = timeLabel.Width = clocksPanel.Width;
+
+                valueLabel.Font = new Font(fontFamily, fontSizeValue, FontStyle.Regular);
+                timeLabel.Font = new Font(fontFamily, fontSizeTime, FontStyle.Regular);
+
+                clocksPanel.ResumeLayout(false);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private string TimeSpanToString(TimeSpan span)
@@ -155,9 +173,15 @@ namespace GuinnessTimer
         {
             var value = TimerController.GetTimeElapsed();
             var valueString = TimeSpanToString(value);
-            if (timeLabel.Text != valueString)
+            var currentTimeString = DateTime.Now.ToString("HH:mm");
+
+            if (valueLabel.Text != valueString)
             {
-                timeLabel.Text = valueString;
+                valueLabel.Text = valueString;
+            }
+            if (timeLabel.Text != currentTimeString)
+            {
+                timeLabel.Text = currentTimeString;
             }
             UpdatePasswordToStopState();
         }
@@ -174,7 +198,12 @@ namespace GuinnessTimer
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            UpdateTimerFontSize();
+            UpdateTimerLabelSize();
+        }
+
+        private void clocksPanel_Layout(object sender, LayoutEventArgs e)
+        {
+            UpdateTimerLabelSize();
         }
 
         private bool _InPasswordEnteringMode = false;
